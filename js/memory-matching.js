@@ -96,12 +96,14 @@ function shuffle(array) {
 }
 
 function selectCard() {
-	if ($(".card-flipped").size() > 1) {
-		return;
-	}
-	$(this).addClass("card-flipped");
-	if ($(".card-flipped").size() == 2) {
-		setTimeout(checkPattern,1400);
+	if (!$(this).hasClass('opaco')) {
+		if ($(".card-flipped").size() > 1) {
+			return;
+		}
+		$(this).addClass("card-flipped");
+		if ($(".card-flipped").size() == 2) {
+			setTimeout(checkPattern,1400);
+		}
 	}
 }
 
@@ -125,8 +127,10 @@ function isMatchPattern() {
 }
 
 function removeTookCards() {
-	$(".card-removed").remove();
-	if ($(".card").length == 0) {
+	//$(".card-removed").remove();
+	$(".card-removed").css({"opacity":"0"});
+	$(".card-removed").addClass('opaco');
+	if ($(".card:not(.opaco)").length == 0) {
 		gameover();
 	}
 }
