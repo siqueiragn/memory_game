@@ -262,8 +262,29 @@ div#loader {
 	color: black;
 	font-size: 50px;
     line-height: 1;
-    margin: 5% 5% 0 5%;
+    margin: 5% 1% 0 1%;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     padding: 50px;
+}
+
+@media screen and (orientation:portrait) {
+    
+	body {
+		background-color: #680261;
+		background-size: 100% 100%;
+		background-image: none;
+	}
+	
+	#cards {
+		margin-top: 25%;	
+	}
+	
+	#timer {
+		font-size: 60px;
+	}
+	
+	header {
+		font-size: 65px;
+	}
 }
