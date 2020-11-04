@@ -30,7 +30,26 @@
                 Tempo decorrido: <span id="elapsed-time">00:00</span>
             </div>
             <section id="game">
-                <div id="cards">
+			
+				<div id="menu" style="display: none">
+				
+					<button class="btn" type="button" onclick="start();">JOGAR</button>
+					<button class="btn" type="button" onclick="instrucoes();">INSTRUÇÕES</button>
+				
+				</div>
+				<div id="instrucoes" style="display: none">
+				
+					<div><span class="numero">1</span><p>Toque nas cartas até formar um par com cartas iguais.</label>                          </div>
+					<div><span class="numero">2</span><p>Leia atentamente todas as recomendações de prevenção.</label>                          </div>
+					<div><span class="numero">3</span><p>Divulgue o que aprendeu para seus amigos e familiares.</label>                       	</div>
+					<div><span class="numero">4</span><p>Informações do Ministério da Saúde do Brasil e da Organização Mundial da Saúde.</label></div>
+				
+					<div class="align-btn">
+					<button class="btn" type="button" onclick="menu();">VOLTAR</button>
+					</div>
+				
+				</div>
+                <div id="cards" style="display: none;">
                     <div class="card">
                         <div class="face front"></div>
                         <div class="face back">

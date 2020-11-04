@@ -252,8 +252,33 @@ $(function(){
 
 		$this.click(selectCard);
 	});
-	$cards.fadeIn();
 	$loader.fadeOut();
-	matchingGame.timer = setInterval(countTimer, 1000);
+	
+	menu();
    
 });
+
+function start() {
+	
+	var $cards = $("#cards");
+	var $menu = $("#menu");
+
+	$menu.css({'display' : 'none'});
+	$cards.fadeIn();
+	matchingGame.timer = setInterval(countTimer, 1000);
+	
+}
+
+function menu() {
+	var $menu 		= $("#menu");
+	var $instrucao 	= $("#instrucoes");
+	$menu.css({'display' : 'block'});
+	$instrucao.css({'display' : 'none'});
+}
+
+function instrucoes() {
+	var $menu 		= $("#menu");
+	var $instrucao 	= $("#instrucoes");
+	$menu.css({'display' : 'none'});
+	$instrucao.css({'display' : 'block'});
+}
