@@ -8,6 +8,7 @@ body {
     text-shadow: 0 1px 0 #222;
 	background-repeat: no-repeat;
     background-size: cover;
+	padding: 30px;
 }
 h1 {
     font-weight: bold;
@@ -156,7 +157,7 @@ a:hover {
 #popup-box {
     position: relative;
     width: 400px;
-    height: 300px;
+    height: 380px;
     background: #ccc;
     border-radius: 10px;
     -webkit-box-shadow: 0 5px 5px #333;
@@ -333,6 +334,13 @@ div#loader {
 	color: #d205d8;
 	border: 1px solid #00db00;
 }
+
+#floating-credits {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+	
+}
 @media screen and (orientation:portrait) {
     
 	body {
@@ -344,7 +352,7 @@ div#loader {
 	#cards {
 		margin-top: 25%;	
 	}
-	
+	 
 	#timer {
 		font-size: 60px;
 	}
@@ -364,6 +372,7 @@ div#loader {
 		height: 80px;
 		font-size: 1.5em;
 	}
+	
 
 	#instrucoes {
 		margin-top: 15px;
@@ -379,6 +388,12 @@ div#loader {
 	
 	.numero {
 		font-size: 2em;
+	}
+	
+	#btn-jogar-novamente {
+		font-size: 16px;
+		height: 40px;
+		padding: 0;
 	}
  
 }

@@ -6,6 +6,7 @@ matchingGame.deck = [];
 
 var listaCards = new Array();
 
+
 var cardsArray = [
 
 {	
@@ -69,9 +70,7 @@ function getAllCards() {
 	  listaCards.push(cardsArray[item]);
 	  
   }
-       
-    
- data = window.listaCards;
+ 
       
 }
 
@@ -188,7 +187,7 @@ function countTimer() {
 
 $(function(){
 	
-	// Get the modal
+		// Get the modal
 	var modal = document.getElementById("myModal");
 
 	// Get the button that opens the modal
@@ -213,16 +212,45 @@ $(function(){
 		modal.style.display = "none";
 	  }
 	}
-
-    var $cards = $("#cards");
+	
+	menu();
     var $loader = $("#loader");
+	$loader.fadeOut();
+
+   
+});
+
+function montar_jogo() {
+
+	$("#popup").addClass("hide");
+
+	var matchingGame = {
+		elapsedTime: 0
+	};
+
+	matchingGame.deck = []; 
+
+	$("#elapsed-time").val('00:00');
+	
+ 
+    var $cards = $("#cards");
+   
+    $cards.hide();
+	
+	for (var i = 0; i < listaCards.length; ++i) {
+		matchingGame.deck.pop();
+	}
+	
+	listaCards.splice(0, 8);
+	
+	$('#cards').html("<div class=\"card\"><div class=\"face front\"></div><div class=\"face back\">" +
+					 "<div class=\"name\"></div><div class=\"login\"></div></div></div>");
 	
 	getAllCards();
-
-    $cards.hide();
 	for (var i = 0; i < listaCards.length; ++i) {
 		matchingGame.deck.push(listaCards[i], listaCards[i]);
 	}
+	
 	shuffle(matchingGame.deck);
 	for(var i=0;i<15;i++){
 		$('.card:first-child').clone().appendTo($cards);
@@ -252,11 +280,12 @@ $(function(){
 
 		$this.click(selectCard);
 	});
-	$loader.fadeOut();
 	
-	menu();
-   
-});
+		
+	start();
+	
+	  
+}
 
 function start() {
 	
@@ -265,6 +294,7 @@ function start() {
 
 	$menu.css({'display' : 'none'});
 	$cards.fadeIn();
+	matchingGame.elapsedTime = 0;
 	matchingGame.timer = setInterval(countTimer, 1000);
 	
 }
